@@ -4,9 +4,15 @@ void main() {
   runApp(const MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({super.key});
 
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  int _count = 0;
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -18,11 +24,20 @@ class MyApp extends StatelessWidget {
           backgroundColor: Colors.blue,
           centerTitle: true,
         ),
-        body: const Center(
+        body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text("Click Counter"),
+              Text(
+                "Click Counter",
+                style: TextStyle(
+                  fontSize: 20,
+                ),
+              ),
+              Text(
+                _count.toString(),
+                style: TextStyle(fontSize: 32),
+              )
             ],
           ),
         ),
