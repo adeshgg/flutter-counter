@@ -13,6 +13,13 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   int _count = 0;
+
+  increment() {
+    setState(() {
+      _count++;
+    });
+  }
+
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -42,10 +49,7 @@ class _MyAppState extends State<MyApp> {
           ),
         ),
         floatingActionButton: FloatingActionButton(
-            onPressed: () {
-              print("Add");
-            },
-            child: const Icon(Icons.add)),
+            onPressed: increment, child: const Icon(Icons.add)),
       ),
     );
   }
