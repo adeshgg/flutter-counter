@@ -14,10 +14,23 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          title: Text("Counter App"),
+          title: const Text("Counter App"),
           backgroundColor: Colors.blue,
           centerTitle: true,
         ),
+        body: const Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text("Click Counter"),
+            ],
+          ),
+        ),
+        floatingActionButton: FloatingActionButton(
+            onPressed: () {
+              print("Add");
+            },
+            child: const Icon(Icons.add)),
       ),
     );
   }
